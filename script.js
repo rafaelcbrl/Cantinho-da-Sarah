@@ -751,7 +751,7 @@
             } catch (error) {
                 updatePlayButtons();
                 if (artistElement) {
-                    artistElement.textContent = 'Adicione o arquivo de áudio correspondente em assets/musicas/.';
+                    artistElement.textContent = 'Adicione o arquivo de áudio correspondente em /musicas/.';
                 }
                 console.warn('Não foi possível iniciar a música:', error);
             }

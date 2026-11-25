@@ -33,7 +33,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = __dirname;
 const frontEndDir = projectRoot;
-
+const cantadasDir = path.join(projectRoot, 'cantadas');
+const musicasDir = path.join(projectRoot, 'musicas');
 // -----------------------------------------------------------------------------
 // CONFIGURAÇÃO
 // -----------------------------------------------------------------------------
@@ -106,14 +107,14 @@ app.get('/script.js', (_req, res) =>
     res.sendFile(path.join(frontEndDir, 'script.js'))
 );
 
-app.use('/cantadas', express.static(path.join(projectRoot, 'cantadas'), {
+app.use('/cantadas', express.static(cantadasDir, {
     dotfiles: 'deny',
     fallthrough: false,
     index: false,
     maxAge: NODE_ENV === 'production' ? '7d' : 0
 }));
 
-app.use('/musicas', express.static(path.join(projectRoot, 'musicas'), {
+app.use('/musicas', express.static(musicasDir, {
     dotfiles: 'deny',
     fallthrough: false,
     index: false,

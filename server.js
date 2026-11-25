@@ -31,8 +31,8 @@ import { randomUUID, timingSafeEqual } from 'node:crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const projectRoot = path.resolve(__dirname, '..');
-const frontEndDir = path.join(projectRoot, 'front-end');
+const projectRoot = __dirname;
+const frontEndDir = projectRoot;
 
 // -----------------------------------------------------------------------------
 // CONFIGURAÇÃO
